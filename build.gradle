@@ -18,7 +18,8 @@
 
 plugins {
     id 'org.kordamp.gradle.project' version '0.26.0'
-    id 'org.kordamp.gradle.bintray' version '0.26.0'            
+    id 'org.kordamp.gradle.bintray' version '0.26.0'
+    id 'groovy'
 }
 
 ext {
