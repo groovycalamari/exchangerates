@@ -26,6 +26,7 @@ config {
 }
 
 group 'groovycalamari'
+version projectVersion
 
 dependencies {
     annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
