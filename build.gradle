@@ -61,8 +61,8 @@ config {
     if (System.getenv('BINTRAY_USERNAME') && System.getenv('BINTRAY_APIKEY')) {
         bintray {
             credentials {
-                username = System.getEnv('BINTRAY_USERNAME')
-                password = System.getEnv('BINTRAY_APIKEY')
+                username = System.getenv('BINTRAY_USERNAME')
+                password = System.getenv('BINTRAY_APIKEY')
             }
             userOrg    = githubOrg
             name       = githubSlug
