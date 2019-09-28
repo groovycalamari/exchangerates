@@ -82,4 +82,10 @@ allprojects {
         maven { url "https://jcenter.bintray.com" }
     }
 }
+subprojects {
+   compileGroovy {
+        sourceCompatibility = project.sourceCompatibility
+        targetCompatibility = project.targetCompatibility
+   }
+}
 
