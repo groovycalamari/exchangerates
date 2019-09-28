@@ -74,6 +74,8 @@ config {
 }
 
 allprojects {
+    apply plugin: 'idea'
+
     repositories {
         mavenCentral()
         maven { url "https://jcenter.bintray.com" }
