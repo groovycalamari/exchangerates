@@ -26,6 +26,9 @@ ext {
     githubOrg = 'sdelamo'
 }
 
+if (!project.hasProperty('bintrayUsername')) ext.bintrayUsername = '**UNDEFINED**'
+if (!project.hasProperty('bintrayApiKey'))   ext.bintrayApiKey   = '**UNDEFINED**'
+
 config {
     release = (rootProject.findProperty('release') ?: false).toBoolean()  
 
@@ -58,21 +61,16 @@ config {
         }
     }
 
-    if (System.getenv('BINTRAY_USERNAME') && System.getenv('BINTRAY_APIKEY')) {
-        bintray {
-            credentials {
-                username = System.getenv('BINTRAY_USERNAME')
-                password = System.getenv('BINTRAY_APIKEY')
-            }
-            userOrg    = githubOrg
-            name       = githubSlug
-            githubRepo = "${githubOrg}/${githubSlug}"
+    bintray {
+        credentials {
+            username = project.bintrayUsername
+            password = project.bintrayApiKey
         }
-    } else {
-        bintray {
-            enabled = false
-        }
+        userOrg    = githubOrg
+        name       = githubSlug
+        githubRepo = "${githubOrg}/${githubSlug}"
     }
+
 }
 
 allprojects {
