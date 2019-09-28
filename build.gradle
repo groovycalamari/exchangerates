@@ -1,0 +1,84 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Copyright 2019-2020 Sergio del Amo.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+plugins {
+    id 'org.kordamp.gradle.project' version '0.26.0'
+    id 'org.kordamp.gradle.bintray' version '0.26.0'            
+}
+
+ext {
+    githubSlug = 'exchangeratesapi'
+    githubOrg = 'sdelamo'
+}
+
+config {
+    release = (rootProject.findProperty('release') ?: false).toBoolean()  
+
+    info {                                                                
+        name        = 'Exchanges Rates API'
+        vendor      = 'Groovy Calamari'
+        description = 'Java Micronaut HTTP Client for exchangeratesapi.io'
+        inceptionYear = '2019'
+
+        links {
+            website      = "https://github.com/${githubOrg}/${githubSlug}"
+            issueTracker = "https://github.com/${githubOrg}/${githubSlug}/issues"
+            scm          = "https://github.com/${githubOrg}/${githubSlug}.git"
+        }
+
+        people {
+            person {
+                id    = 'sdelamo'
+                name  = 'Sergio del Amo'
+                roles = ['developer']
+            }
+        }
+    }
+
+    licensing {                                                           
+        licenses {
+            license {
+                id = 'Apache-2.0'
+            }
+        }
+    }
+
+    if (System.getenv('BINTRAY_USERNAME') && System.getenv('BINTRAY_APIKEY')) {
+        bintray {
+            credentials {
+                username = System.getEnv('BINTRAY_USERNAME')
+                password = System.getEnv('BINTRAY_APIKEY')
+            }
+            userOrg    = githubOrg
+            name       = githubSlug
+            githubRepo = "${githubOrg}/${githubSlug}"
+        }
+    } else {
+        bintray {
+            enabled = false
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://jcenter.bintray.com" }
+    }
+}
+

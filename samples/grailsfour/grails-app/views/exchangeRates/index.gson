@@ -1,0 +1,12 @@
+import io.exchangeratesapi.ForeignExchangeReferenceRates
+
+import java.time.format.DateTimeFormatter
+
+model {
+    ForeignExchangeReferenceRates foreignExchangeReferenceRates
+}
+json {
+    base foreignExchangeReferenceRates.base.toString()
+    date foreignExchangeReferenceRates.date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+    rates foreignExchangeReferenceRates.rates
+}
