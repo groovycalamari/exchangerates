@@ -25,9 +25,6 @@ config {
     licensing { enabled = false }
 }
 
-group 'groovycalamari'
-version projectVersion
-
 dependencies {
     annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     annotationProcessor "io.micronaut:micronaut-inject-java"
