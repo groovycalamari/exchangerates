@@ -23,10 +23,6 @@ plugins {
     id 'groovy'
 }
 
-version "0.1"
-group "groovycalamari"
-
-
 config {
     licensing { enabled = false }
     bintray    { enabled = false }
