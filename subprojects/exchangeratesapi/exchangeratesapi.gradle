@@ -23,6 +23,7 @@ plugins {
 
 config {
     licensing { enabled = false }
+    groovydoc { enabled = false }
 }
 
 dependencies {

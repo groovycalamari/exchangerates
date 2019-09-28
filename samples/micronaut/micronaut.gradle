@@ -7,6 +7,7 @@ plugins {
 
 config {
     licensing { enabled = false }
+    groovydoc { enabled = false }
     bintray    { enabled = false }
     publishing { enabled = false }
 }

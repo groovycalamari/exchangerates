@@ -25,6 +25,7 @@ apply plugin: "org.grails.plugins.views-json"
 
 config {
     licensing { enabled = false }
+    groovydoc { enabled = false }
     bintray    { enabled = false }
     publishing { enabled = false }
 }
