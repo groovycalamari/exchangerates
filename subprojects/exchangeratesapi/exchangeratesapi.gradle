@@ -22,8 +22,8 @@ plugins {
 }
 
 config {
-    groovydoc { enabled = false }
-    bintray { enabled = true }
+    groovydoc  { enabled = false }
+    bintray    { enabled = true }
     publishing { enabled = true }
 }
 license {
