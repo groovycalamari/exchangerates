@@ -73,7 +73,6 @@ config {
         }
         userOrg    = githubOrg
         name       = githubSlug
-        githubRepo = "${githubOrg}/${githubSlug}"
     }
 
 }
