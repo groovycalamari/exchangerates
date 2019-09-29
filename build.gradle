@@ -23,8 +23,8 @@ plugins {
 }
 
 ext {
-    githubSlug = 'exchangeratesapi'
-    githubOrg = 'sdelamo'
+    githubSlug = 'exchangerates'
+    githubOrg = 'groovycalamari'
 }
 
 if (!project.hasProperty('bintrayUsername')) ext.bintrayUsername = '**UNDEFINED**'
