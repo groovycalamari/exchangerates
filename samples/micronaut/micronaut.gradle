@@ -32,11 +32,6 @@ config {
 version "0.1"
 group "example"
 
-repositories {
-    mavenCentral()
-    maven { url "https://jcenter.bintray.com" }
-}
-
 configurations {
     // for dependencies that are needed for development only
     developmentOnly 
