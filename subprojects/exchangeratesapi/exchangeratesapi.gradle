@@ -23,6 +23,9 @@ plugins {
 
 config {
     groovydoc { enabled = false }
+    bintray { enabled = true }
+    publishing { enabled = true }
+}
 license {
     excludes(["**/logback.xml"])
 }
