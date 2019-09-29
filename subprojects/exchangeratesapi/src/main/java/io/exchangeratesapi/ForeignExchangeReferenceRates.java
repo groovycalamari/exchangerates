@@ -17,6 +17,7 @@
  */
 package io.exchangeratesapi;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.micronaut.core.annotation.Introspected;
 import io.micronaut.core.convert.format.Format;
 
@@ -44,7 +45,7 @@ public class ForeignExchangeReferenceRates {
         this.base = base;
     }
 
-    @Format("yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     public LocalDate getDate() {
         return date;
     }
