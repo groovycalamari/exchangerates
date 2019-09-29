@@ -85,7 +85,6 @@ allprojects {
         mavenCentral()
         maven { url "https://jcenter.bintray.com" }
     }
-    licenseGradle.enabled = false
 }
 subprojects {
    compileGroovy {
