@@ -22,8 +22,9 @@ plugins {
 }
 
 config {
-    licensing { enabled = false }
     groovydoc { enabled = false }
+license {
+    excludes(["**/logback.xml"])
 }
 
 dependencies {
