@@ -52,6 +52,10 @@ config {
                 roles = ['developer']
             }
         }
+        ciManagement {
+            system = "Github Actions"
+            url = "https://github.com/${githubOrg}/${githubSlug}/actions"
+        }
     }
 
     licensing {                                                           
